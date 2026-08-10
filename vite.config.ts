@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 export default defineConfig({
   // A project page is served from a subpath, so the base has to be injected at
@@ -8,7 +8,9 @@ export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
   plugins: [react()],
   resolve: {
-    alias: { '@': path.resolve(process.cwd(), './src') },
+    // Resolved from this file, not the working directory — a host that invokes
+    // the build from anywhere else would otherwise fail to resolve '@'.
+    alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
   // Host and port match what hosted preview environments expect; both are
   // harmless locally.
