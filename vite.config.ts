@@ -10,5 +10,7 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(process.cwd(), './src') },
   },
-  server: { host: true, port: 5173 },
+  // Host and port match what hosted preview environments expect; both are
+  // harmless locally.
+  server: { host: '::', port: 8080 },
 })

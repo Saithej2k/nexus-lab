@@ -12,7 +12,7 @@ The transcript is not the interface. Watching the reasoning organise itself is.
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
+npm run dev      # http://localhost:8080
 npm run build    # typecheck + production bundle
 npm run lint
 ```
