@@ -17,6 +17,9 @@ concurrency:
 
 jobs:
   build:
+    # This repo is mirrored to a host that owns its own copy; only the canonical
+    # one publishes Pages, so the mirror never shows a failing deploy.
+    if: github.repository == 'Saithej2k/nexus-lab'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -49,6 +52,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.repository == 'Saithej2k/nexus-lab'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
