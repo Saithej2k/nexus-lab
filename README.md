@@ -1,6 +1,6 @@
 # NEXUS — Autonomous Future Lab
 
-**[Open the live lab →](https://saithej2k.github.io/nexus-lab/)**
+**[Open the live lab →](https://nexus-minimal-magic.lovable.app)**  ·  [mirror](https://saithej2k.github.io/nexus-lab/)
 
 A decision laboratory. Give it a mission with no obvious answer and watch six specialist agents
 build competing models of it, attack each other's assumptions, grow a live decision graph, branch
