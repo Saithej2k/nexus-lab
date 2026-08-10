@@ -10,9 +10,12 @@ import { NotFound } from '@/pages/NotFound'
  */
 const Router = import.meta.env.VITE_HASH_ROUTER ? HashRouter : BrowserRouter
 
+/** Strips the trailing slash Vite leaves on BASE_URL; '/' becomes ''. */
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export default function App() {
   return (
-    <Router>
+    <Router basename={basename}>
       <NexusProvider>
         <Routes>
           <Route path="/" element={<AppShell />} />
